@@ -1,16 +1,143 @@
-# tdd_sum
+# String Calculator - TDD Implementation
 
-A new Flutter project.
+A Flutter implementation of the classic String Calculator kata using Test-Driven Development (TDD) principles.
+
+## What is this?
+
+This project implements a string calculator that can add numbers from a string input. It started as a simple TDD exercise but evolved into a full Flutter app with a user-friendly interface.
+
+The calculator handles various input formats:
+
+- Simple comma-separated numbers: `1,2,3`
+- Newline-separated numbers: `1\n2\n3`
+- Custom single delimiters: `//;\n1;2;3`
+- Multi-character delimiters: `//[***]\n1***2***3`
+- Multiple delimiters: `//[*][%]\n1*2%3`
+
+## Features
+
+- ✅ Handles empty strings (returns 0)
+- ✅ Supports unlimited numbers in input
+- ✅ Multiple delimiter support (comma, newline, custom)
+- ✅ Custom delimiter syntax with `//` prefix
+- ✅ Multi-character delimiters using bracket notation
+- ✅ Multiple delimiters in single input
+- ✅ Negative number validation (throws exceptions)
+- ✅ Ignores numbers greater than 1000
+- ✅ Clean Flutter UI for interactive testing
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK (latest stable version)
+- Dart SDK
+- An IDE like VS Code or Android Studio
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone this repository:
+
+```bash
+git clone <your-repo-url>
+cd tdd_sum
+```
+
+2. Get the dependencies:
+
+```bash
+flutter pub get
+```
+
+3. Run the app:
+
+```bash
+flutter run
+```
+
+## Running Tests
+
+The project includes comprehensive unit tests following TDD methodology. To run all tests:
+
+```bash
+flutter test
+```
+
+For verbose output:
+
+```bash
+flutter test --verbose
+```
+
+To run tests with coverage:
+
+```bash
+flutter test --coverage
+```
+
+The test file is located at `test/string_calculator_test.dart` and covers all the calculator functionality including edge cases.
+
+## Project Structure
+
+```
+lib/
+├── main.dart                 # App entry point
+├── service/
+│   └── string_calculator.dart # Core calculator logic
+├── screens/
+│   └── calculator_screen.dart # Main UI screen
+└── widgets/
+    ├── input_widget.dart     # Text input component
+    └── result_widget.dart    # Result display component
+
+test/
+└── string_calculator_test.dart # Unit tests
+```
+
+## Using the UI
+
+The app includes a complementary user interface where you can:
+
+1. **Input Field**: Enter your string numbers with various delimiter formats
+2. **Real-time Results**: See calculations update as you type
+3. **Error Handling**: Clear error messages for invalid inputs
+4. **Examples**: Built-in hints showing supported formats
+5. **Clear Button**: Reset input and results
+
+### Example Inputs to Try:
+
+- `1,2,3` → Result: 6
+- `//;\n1;2;3` → Result: 6
+- `//[***]\n1***2***3` → Result: 6
+- `//[*][%]\n1*2%3` → Result: 6
+- `1,-2` → Error: negative numbers not allowed
+
+## TDD Approach
+
+This project was built using Test-Driven Development:
+
+1. **Red**: Write a failing test
+2. **Green**: Write minimal code to make it pass
+3. **Refactor**: Clean up the code while keeping tests green
+
+Each feature was implemented following this cycle, ensuring high code quality and test coverage.
+
+## Technical Notes
+
+- Built with Flutter for cross-platform compatibility
+- Uses Dart's latest language features (records, pattern matching)
+- Follows Flutter best practices for state management
+- Comprehensive error handling with user-friendly messages
+- Clean architecture separating business logic from UI
+
+## Contributing
+
+Feel free to fork this project and submit pull requests. Make sure to:
+
+- Add tests for new features
+- Follow the existing code style
+- Update this README if needed
+
+## License
+
+This project is open source and available under the MIT License.
