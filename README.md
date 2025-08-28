@@ -2,7 +2,7 @@
 
 This is my solution for the String Calculator kata assignment. Built it with Flutter using proper TDD approach and clean architecture patterns.
 
-## 🚀 **MAIN TDD LOGIC IS IN:** [`lib/domain/services/string_calculator.dart`](lib/domain/services/string_calculator.dart)
+## 🚀 **MAIN Calculator TDD LOGIC IS IN:** [`lib/domain/services/string_calculator.dart`](lib/domain/services/string_calculator.dart) All tests in `test/string_calculator_test.dart` drive this implementation.
 
 ## What it does
 
