@@ -16,17 +16,10 @@ class StringCalculatorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<StringCalculator>(
-          create: (_) => StringCalculator(),
-        ),
-        ProxyProvider<StringCalculator, CalculateNumbersUseCase>(
-          update: (_, calculator, __) => CalculateNumbersUseCase(calculator),
-        ),
-        ChangeNotifierProxyProvider<CalculateNumbersUseCase, CalculatorViewModel>(
-          create: (context) => CalculatorViewModel(
-            Provider.of<CalculateNumbersUseCase>(context, listen: false),
+        ChangeNotifierProvider(
+          create: (_) => CalculatorViewModel(
+            CalculateNumbersUseCase(StringCalculator()),
           ),
-          update: (_, useCase, __) => CalculatorViewModel(useCase),
         ),
       ],
       child: MaterialApp(
