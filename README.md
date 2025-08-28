@@ -25,7 +25,7 @@ lib/
 │   ├── entities/
 │   │   └── calculation_result.dart         # Business models
 │   ├── services/
-│   │   ├── string_calculator.dart          # Core calculation logic
+│   │   ├── string_calculator.dart          # 🔥 CORE TDD LOGIC HERE 🔥
 │   │   └── error_message_formatter.dart    # Error formatting
 │   └── use_cases/
 │       └── calculate_numbers_use_case.dart # Business rules
@@ -88,6 +88,8 @@ flutter test --coverage
 ## Development Approach
 
 Followed TDD strictly - wrote failing tests first, made them pass with minimal code, then refactored. Each feature went through the red-green-refactor cycle.
+
+**🎯 IMPORTANT: The core TDD implementation is in `lib/domain/services/string_calculator.dart` - this is where all the main kata logic lives!** All tests in `test/string_calculator_test.dart` drive this implementation.
 
 The clean architecture separation means:
 
