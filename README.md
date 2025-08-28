@@ -2,6 +2,8 @@
 
 This is my solution for the String Calculator kata assignment. Built it with Flutter using proper TDD approach and clean architecture patterns.
 
+## 🚀 **MAIN TDD LOGIC IS IN:** [`lib/domain/services/string_calculator.dart`](lib/domain/services/string_calculator.dart)
+
 ## What it does
 
 Takes a string with numbers and adds them up. Started simple with comma-separated values but ended up supporting pretty much any delimiter format you can think of.
