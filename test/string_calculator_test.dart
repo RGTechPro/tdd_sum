@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tdd_sum/service/string_calculator.dart';
+import 'package:tdd_sum/domain/services/string_calculator.dart';
 
 void main() {
   group('String Calculator', () {

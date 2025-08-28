@@ -1,5 +1,5 @@
 import '../entities/calculation_result.dart';
-import '../../service/string_calculator.dart';
+import '../services/string_calculator.dart';
 
 class CalculateNumbersUseCase {
   final StringCalculator _calculator;

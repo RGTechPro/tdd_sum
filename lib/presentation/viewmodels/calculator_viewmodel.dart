@@ -10,12 +10,14 @@ class CalculatorViewModel extends ChangeNotifier {
   String _result = '';
   bool _hasError = false;
   String? _errorMessage;
+  String? _formattedErrorMessage;
 
   // Getters
   String get inputText => _inputText;
   String get result => _result;
   bool get hasError => _hasError;
   String? get errorMessage => _errorMessage;
+  String? get formattedErrorMessage => _formattedErrorMessage;
 
   void updateInput(String input) {
     _inputText = input;
@@ -28,6 +30,7 @@ class CalculatorViewModel extends ChangeNotifier {
     _result = '';
     _hasError = false;
     _errorMessage = null;
+    _formattedErrorMessage = null;
     notifyListeners();
   }
 
@@ -36,6 +39,7 @@ class CalculatorViewModel extends ChangeNotifier {
       _result = '';
       _hasError = false;
       _errorMessage = null;
+      _formattedErrorMessage = null;
       return;
     }
 
@@ -44,10 +48,12 @@ class CalculatorViewModel extends ChangeNotifier {
     if (calculationResult.isError) {
       _hasError = true;
       _errorMessage = calculationResult.errorMessage;
+      _formattedErrorMessage = calculationResult.formattedErrorMessage;
       _result = '';
     } else {
       _hasError = false;
       _errorMessage = null;
+      _formattedErrorMessage = null;
       _result = calculationResult.value.toString();
     }
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'service/string_calculator.dart';
+import 'domain/services/string_calculator.dart';
 import 'domain/use_cases/calculate_numbers_use_case.dart';
 import 'presentation/viewmodels/calculator_viewmodel.dart';
 import 'presentation/pages/calculator_page.dart';

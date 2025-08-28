@@ -1,30 +1,48 @@
 # String Calculator TDD Assignment
 
-This is my implementation of the String Calculator kata for the technical assessment. I built it using Flutter with TDD methodology and clean architecture principles.
+This is my solution for the String Calculator kata assignment. Built it with Flutter using proper TDD approach and clean architecture patterns.
 
 ## What it does
 
-A string calculator that processes number strings and returns their sum. Started with basic comma-separated numbers but now handles various delimiter formats including custom ones.
+Takes a string with numbers and adds them up. Started simple with comma-separated values but ended up supporting pretty much any delimiter format you can think of.
 
-The calculator handles various input formats:
+Input examples:
+- `1,2,3` (basic comma)
+- `1\n2\n3` (newlines)  
+- `//;\n1;2;3` (custom delimiter)
+- `//[***]\n1***2***3` (multi-character)
+- `//[*][%]\n1*2%3` (multiple delimiters)
 
-- Simple comma-separated numbers: `1,2,3`
-- Newline-separated numbers: `1\n2\n3`
-- Custom single delimiters: `//;\n1;2;3`
-- Multi-character delimiters: `//[***]\n1***2***3`
-- Multiple delimiters: `//[*][%]\n1*2%3`
+## Project Structure
 
-## Features
+Organized using clean architecture principles:
 
-- ✅ Handles empty strings (returns 0)
-- ✅ Supports unlimited numbers in input
-- ✅ Multiple delimiter support (comma, newline, custom)
-- ✅ Custom delimiter syntax with `//` prefix
-- ✅ Multi-character delimiters using bracket notation
-- ✅ Multiple delimiters in single input
-- ✅ Negative number validation (throws exceptions)
-- ✅ Ignores numbers greater than 1000
-- ✅ Clean Flutter UI for interactive testing
+```
+lib/
+├── main.dart                               # App bootstrap
+├── domain/
+│   ├── entities/
+│   │   └── calculation_result.dart         # Business models
+│   ├── services/
+│   │   ├── string_calculator.dart          # Core calculation logic
+│   │   └── error_message_formatter.dart    # Error formatting
+│   └── use_cases/
+│       └── calculate_numbers_use_case.dart # Business rules
+└── presentation/
+    ├── viewmodels/
+    │   └── calculator_viewmodel.dart        # State management (no setState!)
+    ├── pages/
+    │   └── calculator_page.dart             # Main screen
+    └── widgets/
+        ├── calculator_input_widget.dart     # Input component
+        └── calculator_result_widget.dart    # Result display
+
+test/
+├── string_calculator_test.dart             # Unit tests
+└── widget_test.dart                        # Widget tests
+```
+
+Used Provider for dependency injection and ViewModel pattern instead of setState for cleaner state management.
 
 ## Getting Started
 
