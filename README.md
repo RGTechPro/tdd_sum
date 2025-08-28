@@ -4,7 +4,7 @@ A Flutter implementation of the classic String Calculator kata using Test-Driven
 
 ## What is this?
 
-This project implements a string calculator that can add numbers from a string input. It started as a simple TDD exercise but evolved into a full Flutter app with a user-friendly interface.
+This is my implementation of the String Calculator kata assignment. I built it using Flutter with proper TDD methodology - wrote tests first, then implemented the features step by step. Also added a simple UI so you can actually try it out instead of just running tests.
 
 The calculator handles various input formats:
 
@@ -96,13 +96,13 @@ test/
 
 ## Using the UI
 
-The app includes a complementary user interface where you can:
+I added a Flutter UI so you can test the calculator interactively (figured it would be more useful than just unit tests):
 
-1. **Input Field**: Enter your string numbers with various delimiter formats
-2. **Real-time Results**: See calculations update as you type
-3. **Error Handling**: Clear error messages for invalid inputs
-4. **Examples**: Built-in hints showing supported formats
-5. **Clear Button**: Reset input and results
+1. **Input Field**: Type your numbers with whatever delimiters you want
+2. **Live Results**: Updates as you type
+3. **Error Messages**: Shows helpful errors for invalid input
+4. **Examples**: I put some hints in the placeholder text
+5. **Clear Button**: Resets everything
 
 ### Example Inputs to Try:
 
@@ -114,13 +114,13 @@ The app includes a complementary user interface where you can:
 
 ## TDD Approach
 
-This project was built using Test-Driven Development:
+I followed the classic TDD cycle for this assignment:
 
-1. **Red**: Write a failing test
-2. **Green**: Write minimal code to make it pass
-3. **Refactor**: Clean up the code while keeping tests green
+1. **Red**: Write a failing test first
+2. **Green**: Write just enough code to make it pass
+3. **Refactor**: Clean up while keeping tests green
 
-Each feature was implemented following this cycle, ensuring high code quality and test coverage.
+Started with the simplest case (empty string) and gradually added more complex features. All the tests are in `test/string_calculator_test.dart` if you want to see the progression.
 
 ## Technical Notes
 

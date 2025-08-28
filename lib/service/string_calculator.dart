@@ -21,14 +21,11 @@ class StringCalculator {
     final delimiterSection = input.substring(2, newlineIndex);
     final numbersString = input.substring(newlineIndex + 1);
     
-    return switch (delimiterSection) {
-      // Multiple delimiters with brackets: [del1][del2]...
-      String section when section.contains('[') => (
-        _extractBracketedDelimiters(section),
-        numbersString
-      ),
-      String singleDelim => ([singleDelim], numbersString),
-    };
+    if (delimiterSection.contains('[')) {
+      return (_extractBracketedDelimiters(delimiterSection), numbersString);
+    } else {
+      return ([delimiterSection], numbersString);
+    }
   }
   
   List<String> _extractBracketedDelimiters(String section) {
