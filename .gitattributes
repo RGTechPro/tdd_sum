@@ -1,0 +1,27 @@
+# Override GitHub language detection for Flutter project
+*.dart linguist-detectable=true
+*.cpp linguist-vendored=true
+*.cc linguist-vendored=true
+*.cmake linguist-vendored=true
+*.h linguist-vendored=true
+*.hpp linguist-vendored=true
+CMakeLists.txt linguist-vendored=true
+
+# Flutter generated files
+android/* linguist-vendored=true
+ios/* linguist-vendored=true
+linux/* linguist-vendored=true
+macos/* linguist-vendored=true
+windows/* linguist-vendored=true
+web/* linguist-vendored=true
+
+# Keep Dart as the main language
+lib/** linguist-detectable=true
+test/** linguist-detectable=true
+
+# Mark platform folders as vendored (not counted in language stats)
+android/** linguist-vendored=true
+ios/** linguist-vendored=true
+linux/** linguist-vendored=true
+macos/** linguist-vendored=true
+windows/** linguist-vendored=true
