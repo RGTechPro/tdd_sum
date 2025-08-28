@@ -1,10 +1,10 @@
-# String Calculator - TDD Implementation
+# String Calculator TDD Assignment
 
-A Flutter implementation of the classic String Calculator kata using Test-Driven Development (TDD) principles.
+This is my implementation of the String Calculator kata for the technical assessment. I built it using Flutter with TDD methodology and clean architecture principles.
 
-## What is this?
+## What it does
 
-This is my implementation of the String Calculator kata assignment. I built it using Flutter with proper TDD methodology - wrote tests first, then implemented the features step by step. Also added a simple UI so you can actually try it out instead of just running tests.
+A string calculator that processes number strings and returns their sum. Started with basic comma-separated numbers but now handles various delimiter formats including custom ones.
 
 The calculator handles various input formats:
 
