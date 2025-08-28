@@ -7,8 +7,9 @@ This is my solution for the String Calculator kata assignment. Built it with Flu
 Takes a string with numbers and adds them up. Started simple with comma-separated values but ended up supporting pretty much any delimiter format you can think of.
 
 Input examples:
+
 - `1,2,3` (basic comma)
-- `1\n2\n3` (newlines)  
+- `1\n2\n3` (newlines)
 - `//;\n1;2;3` (custom delimiter)
 - `//[***]\n1***2***3` (multi-character)
 - `//[*][%]\n1*2%3` (multiple delimiters)
@@ -44,118 +45,65 @@ test/
 
 Used Provider for dependency injection and ViewModel pattern instead of setState for cleaner state management.
 
-## Getting Started
+## Features
 
-### Prerequisites
+- Empty string returns 0
+- Handles unlimited numbers
+- Multiple delimiter support
+- Custom delimiter syntax
+- Multi-character delimiters
+- Multiple delimiters in one input
+- Validates against negative numbers
+- Ignores numbers > 1000
+- Real-time UI for testing
 
-- Flutter SDK (latest stable version)
-- Dart SDK
-- An IDE like VS Code or Android Studio
+## Setup
 
-### Installation
-
-1. Clone this repository:
-
-```bash
-git clone <your-repo-url>
-cd tdd_sum
-```
-
-2. Get the dependencies:
+Get dependencies:
 
 ```bash
 flutter pub get
 ```
 
-3. Run the app:
+Run the app:
 
 ```bash
 flutter run
 ```
 
-## Running Tests
+## Testing
 
-The project includes comprehensive unit tests following TDD methodology. To run all tests:
+All tests:
 
 ```bash
 flutter test
 ```
 
-For verbose output:
-
-```bash
-flutter test --verbose
-```
-
-To run tests with coverage:
+With coverage:
 
 ```bash
 flutter test --coverage
 ```
 
-The test file is located at `test/string_calculator_test.dart` and covers all the calculator functionality including edge cases.
+## Development Approach
 
-## Project Structure
+Followed TDD strictly - wrote failing tests first, made them pass with minimal code, then refactored. Each feature went through the red-green-refactor cycle.
 
-```
-lib/
-├── main.dart                 # App entry point
-├── service/
-│   └── string_calculator.dart # Core calculator logic
-├── screens/
-│   └── calculator_screen.dart # Main UI screen
-└── widgets/
-    ├── input_widget.dart     # Text input component
-    └── result_widget.dart    # Result display component
+The clean architecture separation means:
 
-test/
-└── string_calculator_test.dart # Unit tests
-```
+- Domain layer has no dependencies on UI or external frameworks
+- Presentation layer only handles UI concerns
+- Business logic is completely testable in isolation
+- Error formatting logic lives in domain, not UI
 
-## Using the UI
+## UI Features
 
-I added a Flutter UI so you can test the calculator interactively (figured it would be more useful than just unit tests):
+Added a Flutter interface for easier testing. You can type different number formats and see results instantly. Error messages are formatted to be user-friendly while still showing technical details when needed.
 
-1. **Input Field**: Type your numbers with whatever delimiters you want
-2. **Live Results**: Updates as you type
-3. **Error Messages**: Shows helpful errors for invalid input
-4. **Examples**: I put some hints in the placeholder text
-5. **Clear Button**: Resets everything
-
-### Example Inputs to Try:
+Example inputs to try:
 
 - `1,2,3` → Result: 6
 - `//;\n1;2;3` → Result: 6
 - `//[***]\n1***2***3` → Result: 6
 - `//[*][%]\n1*2%3` → Result: 6
 - `1,-2` → Error: negative numbers not allowed
-
-## TDD Approach
-
-I followed the classic TDD cycle for this assignment:
-
-1. **Red**: Write a failing test first
-2. **Green**: Write just enough code to make it pass
-3. **Refactor**: Clean up while keeping tests green
-
-Started with the simplest case (empty string) and gradually added more complex features. All the tests are in `test/string_calculator_test.dart` if you want to see the progression.
-
-## Technical Notes
-
-- Built with Flutter for cross-platform compatibility
-- Uses Dart's latest language features (records, pattern matching)
-- Follows Flutter best practices for state management
-- Comprehensive error handling with user-friendly messages
-- Clean architecture separating business logic from UI
-
-## Contributing
-
-Feel free to fork this project and submit pull requests. Make sure to:
-
-- Add tests for new features
-- Follow the existing code style
-- Update this README if needed
-
-## License
-
-This project is open source and available under the MIT License.
