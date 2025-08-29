@@ -2,7 +2,7 @@
 
 This is my solution for the String Calculator kata assignment. Built it with Flutter using proper TDD approach and clean architecture patterns.
 
-## 🚀 **MAIN Calculator TDD LOGIC IS IN:** [`lib/domain/services/string_calculator.dart`](lib/domain/services/string_calculator.dart) All tests in [`test/string_calculator_test.dart`](test/string_calculator_test.dart) drive this implementation.
+## **MAIN Calculator TDD LOGIC IS IN:** [`lib/domain/services/string_calculator.dart`](lib/domain/services/string_calculator.dart) All tests in [`test/string_calculator_test.dart`](test/string_calculator_test.dart) drive this implementation.
 
 ## What it does
 
@@ -27,7 +27,7 @@ lib/
 │   ├── entities/
 │   │   └── calculation_result.dart         # Business models
 │   ├── services/
-│   │   ├── string_calculator.dart          # 🔥 CORE TDD LOGIC HERE 🔥
+│   │   ├── string_calculator.dart          #  CORE TDD LOGIC HERE 
 │   │   └── error_message_formatter.dart    # Error formatting
 │   └── use_cases/
 │       └── calculate_numbers_use_case.dart # Business rules
@@ -91,7 +91,7 @@ flutter test --coverage
 
 Followed TDD strictly - wrote failing tests first, made them pass with minimal code, then refactored. Each feature went through the red-green-refactor cycle.
 
-**🎯 IMPORTANT: The core TDD implementation is in `lib/domain/services/string_calculator.dart` - this is where all the main kata logic lives!** All tests in `test/string_calculator_test.dart` drive this implementation.
+** IMPORTANT: The core TDD implementation is in `lib/domain/services/string_calculator.dart` - this is where all the main kata logic lives!** All tests in `test/string_calculator_test.dart` drive this implementation.
 
 The clean architecture separation means:
 
